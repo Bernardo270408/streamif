@@ -1,7 +1,7 @@
 {
   "name": "streamif",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "dependencies": {
     "expo": "~56.0.12",
     "expo-status-bar": "~56.0.4",
