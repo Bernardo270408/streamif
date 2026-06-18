@@ -1,0 +1,95 @@
+# Checklist de Desenvolvimento: App StreamIF
+
+## 1. Configuração e Arquitetura de Pastas
+- [ ] Criar a estrutura exata de arquivos e pastas na raiz do projeto:
+  - [ ] `App.js` (Orquestrador: apenas estado e lógica global)
+  - [ ] `components/`
+    - [ ] `MediaCard.js` (Card reutilizável obrigatório)
+    - [ ] `AddMediaForm.js` (Formulário do Modal)
+    - [ ] `EmptyState.js` (Exibido quando a lista estiver vazia)
+  - [ ] `screens/`
+    - [ ] `CatalogScreen.js` (Tela principal com FlatList)
+    - [ ] `DetailScreen.js` (Tela de detalhes com ScrollView)
+- [ ] Garantir que cada componente tenha seu próprio StyleSheet encapsulado (sem estilos compartilhados ou inline fixos).
+- [ ] Garantir que exista apenas um componente por arquivo.
+
+---
+
+## 2. Funcionalidades Obrigatórias
+
+### F1 - Adicionar Mídia (Modal + Formulário)
+- [ ] Criar botão `+ Adicionar` para abrir o Modal.
+- [ ] Configurar o componente `Modal` com `animationType='slide'`.
+- [ ] Construir o formulário em `AddMediaForm.js` com os campos:
+  - [ ] Campo de texto para o título da série/filme.
+  - [ ] Campo de texto para o gênero.
+  - [ ] Campo numérico para a nota pessoal de 1 a 10.
+- [ ] Implementar o botão **Salvar**:
+  - [ ] Elevar os dados para o `App.js` via props (Bottom-Up).
+  - [ ] Gerar o ID do item utilizando `Date.now()`.
+  - [ ] Limpar os campos do formulário após salvar (Two-Way Binding com useState).
+- [ ] Implementar o botão **Cancelar** para fechar o Modal sem salvar.
+
+### F2 - Listagem com FlatList (CatalogScreen)
+- [ ] Renderizar a lista de mídias usando o componente nativo `FlatList`.
+- [ ] Passar via props para o `MediaCard.js`: título, gênero, nota e a flag `assistido` (boolean).
+- [ ] Configurar a cor dinâmica da nota no card:
+  - [ ] Verde para notas maiores ou iguais a 7.
+  - [ ] Amarelo para notas entre 4 e 6.
+  - [ ] Vermelho para notas menores ou iguais a 3.
+- [ ] Implementar o clique simples (`onPress`) no card para alternar o status de `Já assisti` (atualizando o estado sem recarregar o app).
+- [ ] Exibir o componente `EmptyState.js` automaticamente se a lista estiver vazia.
+
+### F3 - Tela de Detalhes (DetailScreen + ScrollView)
+- [ ] Configurar o toque longo (`onLongPress`) em qualquer card para abrir os detalhes.
+- [ ] Implementar a navegação por **renderização condicional** no `App.js` (proibido usar bibliotecas de navegação).
+- [ ] Exibir dentro de um `ScrollView` em `DetailScreen.js`:
+  - [ ] Título, gênero, nota e status "Assistido/Não assistido".
+  - [ ] Um campo de texto livre (`TextInput`) para anotações pessoais do usuário.
+
+### F4 - Exclusão de Mídia
+- [ ] Adicionar um botão ou ícone de remoção dentro do `MediaCard.js`.
+- [ ] Implementar a lógica de exclusão no `App.js` utilizando obrigatoriamente `Array.filter()` (imutabilidade do estado).
+
+---
+
+## 3. Desafios Extras (Bônus - até +2 pontos)
+*Nota: Desafios parciais não pontuam.*
+
+- [ ] **E1 (+0,5):** Contador de mídias no topo da tela mostrando dinamicamente `"X títulos | Y assistidos"`.
+- [ ] **E2 (+0,5):** Ordenação dinâmica com botão que alterna a lista entre ordem alfabética (A-Z) e maior nota primeiro (sem bibliotecas externas).
+- [ ] **E3 (+0,5):** Validação robusta no formulário impedindo título vazio, nota fora do escopo 1-10 e exibindo a mensagem de erro **dentro** do próprio Modal (sem alert).
+- [ ] **E4 (+0,5):** Modo escuro manual através de um botão que alterna o tema do app, propagando as cores via props para todos os componentes.
+
+---
+
+## 4. Restrições e Regras Técnicas
+- [ ] NÃO utilizar `React Navigation`, `Expo Router` ou similares.
+- [ ] NÃO utilizar bibliotecas de UI prontas (`NativeBase`, `React Native Paper`, `UI Kitten`, etc.).
+- [ ] NÃO usar métodos externos (`lodash`, `underscore`) para manipular arrays.
+- [ ] Usar estilos inline apenas para valores puramente dinâmicos (como a cor da nota). Todo o resto deve usar `StyleSheet.create()`.
+- [ ] Garantir que o projeto rode no Expo Go sem nenhum erro de Red Box.
+
+---
+
+## 5. Entregáveis Obrigatórios
+
+### Arquivo README.md
+- [x] Nome completo e matrícula dos dois integrantes da dupla.
+- [ ] Breve descrição do app (máximo de 5 linhas).
+- [ ] Instruções de como executar o projeto (comandos npm/expo).
+- [ ] **Diário de Depuração:** Registro de pelo menos 2 bugs reais encontrados (com o erro exibido, a causa e a solução).
+- [ ] **Justificativa Arquitetural:** Explicação sobre onde o estado foi colocado e como funciona o fluxo de dados entre componentes pais e filhos.
+
+### Documento com as Questões de Verificação Respondidas
+- [ ] **Q1:** Explicação do fluxo de dados e o diagrama em ASCII art do `TextInput` até o array no `App.js`.
+- [ ] **Q2:** Justificativa técnica sobre o uso de `FlatList` no catálogo versus `ScrollView` nos detalhes (explicar o impacto com 500 itens).
+- [ ] **Q3:** Propriedade que controla a visibilidade do Modal, seu tipo de dado e em qual componente o estado foi declarado (com o porquê).
+- [ ] **Q4:** Trecho exato do código que remove o item e explicação do porquê métodos mutáveis (como `splice`) não devem ser usados no React.
+- [ ] **Q5:** Onde a saída do `console.log` é exibida, como ativar a depuração remota e a diferença entre Red Box e Yellow Box.
+- [ ] **Q6 (Pergunta-Armadilha):** Listagem detalhada de pelo menos 7 problemas arquiteturais no código de exemplo fornecido e a apresentação da versão corrigida dele.
+
+### Compactação e Envio
+- [ ] Deletar a pasta `node_modules`.
+- [ ] Compactar o projeto em `.zip` seguindo o padrão: `NomeAluno1_NomeAluno2_StreamIF.zip`.
+- [ ] Realizar o envio exclusivamente pelo AVA dentro do prazo.
