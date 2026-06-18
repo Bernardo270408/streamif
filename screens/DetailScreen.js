@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ScrollView,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet
-} from 'react-native';
+import { ScrollView, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 export default function DetailScreen({ midia, aoVoltar }) {
   const [anotacoes, setAnotacoes] = useState('');
