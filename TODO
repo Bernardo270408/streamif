@@ -11,34 +11,34 @@
     - [X] `CatalogScreen.js` (Tela principal com FlatList)
     - [X] `DetailScreen.js` (Tela de detalhes com ScrollView)
 - [ ] Garantir que cada componente tenha seu próprio StyleSheet encapsulado (sem estilos compartilhados ou inline fixos).
-- [ ] Garantir que exista apenas um componente por arquivo.
+- [X] Garantir que exista apenas um componente por arquivo.
 
 ---
 
 ## 2. Funcionalidades Obrigatórias
 
 ### F1 - Adicionar Mídia (Modal + Formulário)
-- [ ] Criar botão `+ Adicionar` para abrir o Modal.
-- [ ] Configurar o componente `Modal` com `animationType='slide'`.
-- [ ] Construir o formulário em `AddMediaForm.js` com os campos:
-  - [ ] Campo de texto para o título da série/filme.
-  - [ ] Campo de texto para o gênero.
-  - [ ] Campo numérico para a nota pessoal de 1 a 10.
-- [ ] Implementar o botão **Salvar**:
-  - [ ] Elevar os dados para o `App.js` via props (Bottom-Up).
-  - [ ] Gerar o ID do item utilizando `Date.now()`.
-  - [ ] Limpar os campos do formulário após salvar (Two-Way Binding com useState).
-- [ ] Implementar o botão **Cancelar** para fechar o Modal sem salvar.
+- [X] Criar botão `+ Adicionar` para abrir o Modal.
+- [X] Configurar o componente `Modal` com `animationType='slide'`.
+- [X] Construir o formulário em `AddMediaForm.js` com os campos:
+  - [X] Campo de texto para o título da série/filme.
+  - [X] Campo de texto para o gênero.
+  - [X] Campo numérico para a nota pessoal de 1 a 10.
+- [X] Implementar o botão **Salvar**:
+  - [X] Elevar os dados para o `App.js` via props (Bottom-Up).
+  - [X] Gerar o ID do item utilizando `Date.now()`.
+  - [X] Limpar os campos do formulário após salvar (Two-Way Binding com useState).
+- [X] Implementar o botão **Cancelar** para fechar o Modal sem salvar.
 
 ### F2 - Listagem com FlatList (CatalogScreen)
-- [ ] Renderizar a lista de mídias usando o componente nativo `FlatList`.
-- [ ] Passar via props para o `MediaCard.js`: título, gênero, nota e a flag `assistido` (boolean).
-- [ ] Configurar a cor dinâmica da nota no card:
-  - [ ] Verde para notas maiores ou iguais a 7.
-  - [ ] Amarelo para notas entre 4 e 6.
-  - [ ] Vermelho para notas menores ou iguais a 3.
-- [ ] Implementar o clique simples (`onPress`) no card para alternar o status de `Já assisti` (atualizando o estado sem recarregar o app).
-- [ ] Exibir o componente `EmptyState.js` automaticamente se a lista estiver vazia.
+- [X] Renderizar a lista de mídias usando o componente nativo `FlatList`.
+- [X] Passar via props para o `MediaCard.js`: título, gênero, nota e a flag `assistido` (boolean).
+- [X] Configurar a cor dinâmica da nota no card:
+  - [X] Verde para notas maiores ou iguais a 7.
+  - [X] Amarelo para notas entre 4 e 6.
+  - [X] Vermelho para notas menores ou iguais a 3.
+- [X] Implementar o clique simples (`onPress`) no card para alternar o status de `Já assisti` (atualizando o estado sem recarregar o app).
+- [X] Exibir o componente `EmptyState.js` automaticamente se a lista estiver vazia.
 
 ### F3 - Tela de Detalhes (DetailScreen + ScrollView)
 - [ ] Configurar o toque longo (`onLongPress`) em qualquer card para abrir os detalhes.
@@ -48,8 +48,8 @@
   - [ ] Um campo de texto livre (`TextInput`) para anotações pessoais do usuário.
 
 ### F4 - Exclusão de Mídia
-- [ ] Adicionar um botão ou ícone de remoção dentro do `MediaCard.js`.
-- [ ] Implementar a lógica de exclusão no `App.js` utilizando obrigatoriamente `Array.filter()` (imutabilidade do estado).
+- [X] Adicionar um botão ou ícone de remoção dentro do `MediaCard.js`.
+- [X] Implementar a lógica de exclusão no `App.js` utilizando obrigatoriamente `Array.filter()` (imutabilidade do estado).
 
 ---
 
