@@ -2,14 +2,14 @@
 
 ## 1. Configuração e Arquitetura de Pastas
 - [ ] Criar a estrutura exata de arquivos e pastas na raiz do projeto:
-  - [ ] `App.js` (Orquestrador: apenas estado e lógica global)
-  - [ ] `components/`
-    - [ ] `MediaCard.js` (Card reutilizável obrigatório)
-    - [ ] `AddMediaForm.js` (Formulário do Modal)
-    - [ ] `EmptyState.js` (Exibido quando a lista estiver vazia)
-  - [ ] `screens/`
-    - [ ] `CatalogScreen.js` (Tela principal com FlatList)
-    - [ ] `DetailScreen.js` (Tela de detalhes com ScrollView)
+  - [X] `App.js` (Orquestrador: apenas estado e lógica global)
+  - [X] `components/`
+    - [X] `MediaCard.js` (Card reutilizável obrigatório)
+    - [X] `AddMediaForm.js` (Formulário do Modal)
+    - [X] `EmptyState.js` (Exibido quando a lista estiver vazia)
+  - [X] `screens/`
+    - [X] `CatalogScreen.js` (Tela principal com FlatList)
+    - [X] `DetailScreen.js` (Tela de detalhes com ScrollView)
 - [ ] Garantir que cada componente tenha seu próprio StyleSheet encapsulado (sem estilos compartilhados ou inline fixos).
 - [ ] Garantir que exista apenas um componente por arquivo.
 
