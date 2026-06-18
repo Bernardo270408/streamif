@@ -7,9 +7,7 @@ export default function DetailScreen({ midia, aoVoltar }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text>Título: {midia.titulo}</Text>
-
       <Text>Gênero: {midia.genero}</Text>
-
       <Text>Nota: {midia.nota}</Text>
 
       <Text>
