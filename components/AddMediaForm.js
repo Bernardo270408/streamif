@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Modal } from 'react-native';
+import { View, Text, TextInput, Button, Modal, StyleSheet } from 'react-native';
 
 export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
   const [titulo, setTitulo] = useState('');
@@ -12,6 +12,10 @@ export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
   
     if (titulo.trim() === '') {
       setErro('O título não pode estar vazio.');
+      return;
+    }
+    if (genero.trim() === '') {
+      setErro('O gênero não pode estar vazio.');
       return;
     }
   
@@ -35,6 +39,7 @@ export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
     setTitulo('');
     setGenero('');
     setNota('');
+    setErro('');
   };
   const lidarComCancelar = () => {
     setTitulo('');
@@ -50,11 +55,11 @@ export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
         <Text> Adicionar Nova Mídia </Text>
 
         {erro !== '' && (
-        <Text style={{ color: 'red' }}>
-          {erro}
-        </Text>
+          <Text style={styles.erro}>
+            {erro}
+          </Text>
         )}
-      
+  
         <TextInput 
           placeholder="Título da série/filme" 
           value={titulo} 
@@ -79,4 +84,11 @@ export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
       </View>
     </Modal>
   );
+  
 }
+
+const styles = StyleSheet.create({
+  erro: {
+    color: 'red',
+  },
+});
