@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import CatalogScreen from './screens/CatalogScreen';
 import AddMediaForm from './components/AddMediaForm';
+import DetailScreen from './screens/DetailScreen';
 
 export default function App() {
   const [midias, setMidias] = useState([]);
   const [modalVisivel, setModalVisivel] = useState(false);
+
+  const [telaAtual, setTelaAtual] = useState('catalogo');
+  const [midiaSelecionada, setMidiaSelecionada] = useState(null);
 
   const adicionarMidia = (novaMidia) => {
     setMidias([...midias, novaMidia]);
@@ -27,15 +31,34 @@ export default function App() {
     setMidias(listaFiltrada);
   };
 
+  const abrirDetalhes = (item) => {
+  setMidiaSelecionada(item);
+  setTelaAtual('detalhes');
+};
+
+const voltarCatalogo = () => {
+  setTelaAtual('catalogo');
+};
+
+let screen = (
+<CatalogScreen
+midias={midias}
+aoAlternarAssistido={alternarAssistido}
+aoRemover={removerMidia}
+aoAbrirDetalhes={abrirDetalhes}
+abrirModal={() => setModalVisivel(true)}
+/>
+);
+
+if (telaAtual === 'detalhes') {
+screen = (
+
+);
+}
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <CatalogScreen 
-        midias={midias} 
-        aoAlternarAssistido={alternarAssistido}
-        aoRemover={removerMidia}
-        aoAbrirDetalhes={(item) => console.log('Abrir detalhes de:', item)} // Conectar com F3 posteriormente
-        abrirModal={() => setModalVisivel(true)}
-      />
+      {screen}
 
       <AddMediaForm 
         visivel={modalVisivel}
