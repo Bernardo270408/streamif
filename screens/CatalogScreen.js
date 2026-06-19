@@ -3,7 +3,8 @@ import { View, FlatList, Button, Text } from 'react-native';
 import MediaCard from '../components/MediaCard';
 import EmptyState from '../components/EmptyState';
 
-export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, aoAbrirDetalhes, abrirModal }) {
+export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, aoAbrirDetalhes, abrirModal,tipoOrdenacao, alternarOrdenacao }) {
+  
   const totalTitulos = midias.length;
 
   const totalAssistidos = midias.filter(
@@ -13,6 +14,16 @@ export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, 
   return (
     <View>
       <Button title="+ Adicionar" onPress={abrirModal} />
+    
+      <Button
+        title={
+          tipoOrdenacao === 'az'
+            ? 'Ordenação: A-Z'
+            : 'Ordenação: Maior Nota'
+        }
+        onPress={alternarOrdenacao}
+      />
+          
       <Text>
         {totalTitulos} títulos | {totalAssistidos} assistidos
       </Text>
