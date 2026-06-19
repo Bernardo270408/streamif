@@ -78,9 +78,9 @@
 - [x] Nome completo e matrícula dos dois integrantes da dupla.
 - [x] Breve descrição do app (máximo de 5 linhas).
 - [x] Funcionalidades implementadas.
-- [ ] Instruções de como executar o projeto (comandos npm/expo).
-- [ ] **Diário de Depuração:** Registro de pelo menos 2 bugs reais encontrados (com o erro exibido, a causa e a solução).
-- [ ] **Justificativa Arquitetural:** Explicação sobre onde o estado foi colocado e como funciona o fluxo de dados entre componentes pais e filhos.
+- [x] Instruções de como executar o projeto (comandos npm/expo).
+- [x] **Diário de Depuração:** Registro de pelo menos 2 bugs reais encontrados (com o erro exibido, a causa e a solução).
+- [x] **Justificativa Arquitetural:** Explicação sobre onde o estado foi colocado e como funciona o fluxo de dados entre componentes pais e filhos.
 
 ### Documento com as Questões de Verificação Respondidas
 - [ ] **Q1:** Explicação do fluxo de dados e o diagrama em ASCII art do `TextInput` até o array no `App.js`.
