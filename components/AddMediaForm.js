@@ -5,37 +5,56 @@ export default function AddMediaForm({ visivel, aoSalvar, aoCancelar }) {
   const [titulo, setTitulo] = useState('');
   const [genero, setGenero] = useState('');
   const [nota, setNota] = useState('');
+  const [erro, setErro] = useState('');
 
   const lidarComSalvar = () => {
     const notaNumerica = parseFloat(nota);
-    
+  
+    if (titulo.trim() === '') {
+      setErro('O título não pode estar vazio.');
+      return;
+    }
+  
+    if (isNaN(notaNumerica) || notaNumerica < 1 || notaNumerica > 10) {
+      setErro('A nota deve estar entre 1 e 10.');
+      return;
+    }
+  
+    setErro('');
+  
     const novaMidia = {
       id: Date.now().toString(),
       titulo: titulo,
       genero: genero,
       nota: notaNumerica,
-      assistido: false 
+      assistido: false
     };
-
+  
     aoSalvar(novaMidia);
-
+  
     setTitulo('');
     setGenero('');
     setNota('');
   };
-
   const lidarComCancelar = () => {
     setTitulo('');
     setGenero('');
     setNota('');
+    setErro('');
     aoCancelar();
   };
 
   return (
     <Modal visible={visivel} animationType="slide">
       <View>
-        <Text>Adicionar Nova Mídia</Text>
+        <Text> Adicionar Nova Mídia </Text>
 
+        {erro !== '' && (
+        <Text style={{ color: 'red' }}>
+          {erro}
+        </Text>
+        )}
+      
         <TextInput 
           placeholder="Título da série/filme" 
           value={titulo} 
