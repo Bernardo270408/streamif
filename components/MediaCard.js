@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 
 export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbrirDetalhes }) {
   
@@ -17,7 +17,7 @@ export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbri
       onPress={() => aoAlternarAssistido(item.id)}
       onLongPress={() => aoAbrirDetalhes(item)}
     >
-      <View>
+      <View style={styles.container}>
         <Text>Título: {item.titulo}</Text>
         <Text>Gênero: {item.genero}</Text>
         <Text style={{ color: corDaNota }}>Nota: {item.nota}</Text>
@@ -28,3 +28,8 @@ export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbri
     </TouchableOpacity>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+});
