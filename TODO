@@ -56,7 +56,7 @@
 ## 3. Desafios Extras (Bônus - até +2 pontos)
 *Nota: Desafios parciais não pontuam.*
 
-- [ ] **E1 (+0,5):** Contador de mídias no topo da tela mostrando dinamicamente `"X títulos | Y assistidos"`.
+- [x] **E1 (+0,5):** Contador de mídias no topo da tela mostrando dinamicamente `"X títulos | Y assistidos"`.
 - [ ] **E2 (+0,5):** Ordenação dinâmica com botão que alterna a lista entre ordem alfabética (A-Z) e maior nota primeiro (sem bibliotecas externas).
 - [ ] **E3 (+0,5):** Validação robusta no formulário impedindo título vazio, nota fora do escopo 1-10 e exibindo a mensagem de erro **dentro** do próprio Modal (sem alert).
 - [ ] **E4 (+0,5):** Modo escuro manual através de um botão que alterna o tema do app, propagando as cores via props para todos os componentes.
