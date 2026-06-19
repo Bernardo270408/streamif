@@ -41,11 +41,11 @@
 - [X] Exibir o componente `EmptyState.js` automaticamente se a lista estiver vazia.
 
 ### F3 - Tela de Detalhes (DetailScreen + ScrollView)
-- [ ] Configurar o toque longo (`onLongPress`) em qualquer card para abrir os detalhes.
-- [ ] Implementar a navegação por **renderização condicional** no `App.js` (proibido usar bibliotecas de navegação).
-- [ ] Exibir dentro de um `ScrollView` em `DetailScreen.js`:
-  - [ ] Título, gênero, nota e status "Assistido/Não assistido".
-  - [ ] Um campo de texto livre (`TextInput`) para anotações pessoais do usuário.
+- [x] Configurar o toque longo (`onLongPress`) em qualquer card para abrir os detalhes.
+- [x] Implementar a navegação por **renderização condicional** no `App.js` (proibido usar bibliotecas de navegação).
+- [x] Exibir dentro de um `ScrollView` em `DetailScreen.js`:
+  - [x] Título, gênero, nota e status "Assistido/Não assistido".
+  - [x] Um campo de texto livre (`TextInput`) para anotações pessoais do usuário.
 
 ### F4 - Exclusão de Mídia
 - [X] Adicionar um botão ou ícone de remoção dentro do `MediaCard.js`.
