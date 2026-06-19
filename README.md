@@ -35,7 +35,7 @@ npm run android
 
 ## Diário de Apuração: 
 
-##Justificativa Arquitetural:
+## Justificativa Arquitetural:
 
 ## Questões de Verificações:
 
