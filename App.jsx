@@ -51,9 +51,12 @@ abrirModal={() => setModalVisivel(true)}
 );
 
 if (telaAtual === 'detalhes') {
-screen = (
-
-);
+  screen = (
+    <DetailScreen
+      midia={midiaSelecionada}
+      aoVoltar={voltarCatalogo}
+    />
+  );
 }
 
   return (
