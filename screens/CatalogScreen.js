@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Button, Text } from 'react-native';
+import { View, FlatList, Button, Text, StyleSheet } from 'react-native';
 import MediaCard from '../components/MediaCard';
 import EmptyState from '../components/EmptyState';
 
@@ -12,7 +12,7 @@ export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, 
   ).length;
   
   return (
-    <View>
+    <View style={styles.container}>
       <Button title="+ Adicionar" onPress={abrirModal} />
     
       <Button
@@ -44,3 +44,8 @@ export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, 
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
