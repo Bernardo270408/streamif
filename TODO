@@ -76,7 +76,8 @@
 
 ### Arquivo README.md
 - [x] Nome completo e matrícula dos dois integrantes da dupla.
-- [ ] Breve descrição do app (máximo de 5 linhas).
+- [x] Breve descrição do app (máximo de 5 linhas).
+- [x] Funcionalidades implementadas.
 - [ ] Instruções de como executar o projeto (comandos npm/expo).
 - [ ] **Diário de Depuração:** Registro de pelo menos 2 bugs reais encontrados (com o erro exibido, a causa e a solução).
 - [ ] **Justificativa Arquitetural:** Explicação sobre onde o estado foi colocado e como funciona o fluxo de dados entre componentes pais e filhos.
