@@ -40,6 +40,27 @@ const voltarCatalogo = () => {
   setTelaAtual('catalogo');
 };
 
+const alternarOrdenacao = () => {
+    if (tipoOrdenacao === 'az') {
+      setTipoOrdenacao('nota');
+    } else {
+      setTipoOrdenacao('az');
+    }
+  };
+
+  const midiasOrdenadas = [...midias];
+
+  if (tipoOrdenacao === 'az') {
+    midiasOrdenadas.sort((a, b) =>
+      a.titulo.localeCompare(b.titulo)
+    );
+  } else {
+    midiasOrdenadas.sort((a, b) =>
+      b.nota - a.nota
+    );
+  }
+
+
 let screen = (
 <CatalogScreen
 midias={midias}
