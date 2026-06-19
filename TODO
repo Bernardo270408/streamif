@@ -10,7 +10,7 @@
   - [X] `screens/`
     - [X] `CatalogScreen.js` (Tela principal com FlatList)
     - [X] `DetailScreen.js` (Tela de detalhes com ScrollView)
-- [ ] Garantir que cada componente tenha seu próprio StyleSheet encapsulado (sem estilos compartilhados ou inline fixos).
+- [x] Garantir que cada componente tenha seu próprio StyleSheet encapsulado (sem estilos compartilhados ou inline fixos).
 - [X] Garantir que exista apenas um componente por arquivo.
 
 ---
