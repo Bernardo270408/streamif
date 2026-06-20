@@ -64,10 +64,10 @@
 ---
 
 ## 4. Restrições e Regras Técnicas
-- [ ] NÃO utilizar `React Navigation`, `Expo Router` ou similares.
-- [ ] NÃO utilizar bibliotecas de UI prontas (`NativeBase`, `React Native Paper`, `UI Kitten`, etc.).
-- [ ] NÃO usar métodos externos (`lodash`, `underscore`) para manipular arrays.
-- [ ] Usar estilos inline apenas para valores puramente dinâmicos (como a cor da nota). Todo o resto deve usar `StyleSheet.create()`.
+- [x] NÃO utilizar `React Navigation`, `Expo Router` ou similares.
+- [x] NÃO utilizar bibliotecas de UI prontas (`NativeBase`, `React Native Paper`, `UI Kitten`, etc.).
+- [x] NÃO usar métodos externos (`lodash`, `underscore`) para manipular arrays.
+- [x] Usar estilos inline apenas para valores puramente dinâmicos (como a cor da nota). Todo o resto deve usar `StyleSheet.create()`.
 - [ ] Garantir que o projeto rode no Expo Go sem nenhum erro de Red Box.
 
 ---
