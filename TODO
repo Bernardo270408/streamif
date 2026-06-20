@@ -1,7 +1,7 @@
 # Checklist de Desenvolvimento: App StreamIF
 
 ## 1. Configuração e Arquitetura de Pastas
-- [ ] Criar a estrutura exata de arquivos e pastas na raiz do projeto:
+- [x] Criar a estrutura exata de arquivos e pastas na raiz do projeto:
   - [X] `App.js` (Orquestrador: apenas estado e lógica global)
   - [X] `components/`
     - [X] `MediaCard.js` (Card reutilizável obrigatório)
