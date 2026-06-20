@@ -83,12 +83,12 @@
 - [x] **Justificativa Arquitetural:** Explicação sobre onde o estado foi colocado e como funciona o fluxo de dados entre componentes pais e filhos.
 
 ### Documento com as Questões de Verificação Respondidas
-- [ ] **Q1:** Explicação do fluxo de dados e o diagrama em ASCII art do `TextInput` até o array no `App.js`.
-- [ ] **Q2:** Justificativa técnica sobre o uso de `FlatList` no catálogo versus `ScrollView` nos detalhes (explicar o impacto com 500 itens).
-- [ ] **Q3:** Propriedade que controla a visibilidade do Modal, seu tipo de dado e em qual componente o estado foi declarado (com o porquê).
-- [ ] **Q4:** Trecho exato do código que remove o item e explicação do porquê métodos mutáveis (como `splice`) não devem ser usados no React.
-- [ ] **Q5:** Onde a saída do `console.log` é exibida, como ativar a depuração remota e a diferença entre Red Box e Yellow Box.
-- [ ] **Q6 (Pergunta-Armadilha):** Listagem detalhada de pelo menos 7 problemas arquiteturais no código de exemplo fornecido e a apresentação da versão corrigida dele.
+- [x] **Q1:** Explicação do fluxo de dados e o diagrama em ASCII art do `TextInput` até o array no `App.js`.
+- [x] **Q2:** Justificativa técnica sobre o uso de `FlatList` no catálogo versus `ScrollView` nos detalhes (explicar o impacto com 500 itens).
+- [x] **Q3:** Propriedade que controla a visibilidade do Modal, seu tipo de dado e em qual componente o estado foi declarado (com o porquê).
+- [x] **Q4:** Trecho exato do código que remove o item e explicação do porquê métodos mutáveis (como `splice`) não devem ser usados no React.
+- [x] **Q5:** Onde a saída do `console.log` é exibida, como ativar a depuração remota e a diferença entre Red Box e Yellow Box.
+- [x] **Q6 (Pergunta-Armadilha):** Listagem detalhada de pelo menos 7 problemas arquiteturais no código de exemplo fornecido e a apresentação da versão corrigida dele.
 
 ### Compactação e Envio
 - [ ] Deletar a pasta `node_modules`.
