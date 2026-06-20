@@ -1,13 +1,17 @@
 # StreamIF
+</br>
 
 ## Integrantes
 
-Beatriz Cristina Costa, AQ3022153
+Beatriz Cristina Costa, AQ3022153</br>
+
 Bernardo
+</br></br></br>
 
 ## Descrição do Aplicativo
 
 O StreamIF é um aplicativo desenvolvido em React Native para gerenciamento de filmes e séries. O usuário pode cadastrar mídias, visualizar informações, marcar conteúdos como assistidos e consultar detalhes de cada item.
+</br></br></br>
 
 ## Funcionalidades Implementadas
 
@@ -20,6 +24,7 @@ Campo de anotações pessoais.
 Contador dinâmico de títulos e assistidos.
 Ordenação por ordem alfabética (A-Z) e por nota.
 Validação de formulário com mensagens de erro no Modal.
+</br></br></br>
 
 ## Como Executar o Projeto
 
@@ -35,6 +40,8 @@ npm start
 
 npm run android
 
+</br></br></br>
+
 ## Diário de Depuração
 
 Bug 1:
@@ -42,6 +49,8 @@ Bug 1:
 
 Bug 2:
 (A ser preenchido após os testes finais)
+
+</br></br></br>
 
 ## Justificativa Arquitetural:
 
@@ -58,10 +67,12 @@ DetailScreen recebe a mídia selecionada para exibição dos detalhes.
 
 Essa organização permite melhor reutilização dos componentes, manutenção simplificada e separação de responsabilidades.
 
+</br></br></br>
+
 ## Questões de Verificações:
 
 
-# Q1 – Sobre Props e Fluxo de Dados
+### Q1 – Sobre Props e Fluxo de Dados
 
 Os dados são digitados nos TextInputs do componente AddMediaForm e armazenados em estados usando useState. Quando o usuário clica em "Salvar", a função aoSalvar envia os dados para o App.js, que adiciona a nova mídia ao array principal.
 
@@ -70,14 +81,14 @@ Diagrama:
 TextInput > useState > lidarComSalvar() > aoSalvar(novaMidia) > adicionarMidia() >  setMidias() > Array de mídias no App.js
 
 
-# Q2 – Sobre FlatList vs ScrollView
+### Q2 – Sobre FlatList vs ScrollView
 
 Foi utilizada FlatList no catálogo por ser mais eficiente para listas grandes, carregando apenas os itens visíveis na tela. A ScrollView foi usada na tela de detalhes porque exibe apenas as informações de uma mídia.
 
 Se fosse usada ScrollView em uma lista com 500 itens, todos seriam carregados ao mesmo tempo, consumindo mais memória e deixando o aplicativo mais lento.
 
 
-# Q3 – Sobre Modal
+### Q3 – Sobre Modal
 
 A propriedade que controla a visibilidade do Modal é:
 
@@ -92,7 +103,7 @@ O estado foi declarado no App.js:
 const [modalVisivel, setModalVisivel] = useState(false);
 
 
-# Q4 – Sobre Imutabilidade
+### Q4 – Sobre Imutabilidade
 
 const removerMidia = (id) => {
   const listaFiltrada = midias.filter(
@@ -106,7 +117,7 @@ const removerMidia = (id) => {
 Não é recomendado usar splice() ou delete, pois alteram o array original. No React, deve-se criar um novo array para que a interface seja atualizada corretamente.
 
 
-# Q5 – Sobre Depuração
+### Q5 – Sobre Depuração
 
 A saída do console.log aparece no terminal do Metro Bundler e também pode ser vista durante a depuração remota.
 
@@ -117,7 +128,7 @@ Red Box indica um erro que impede o funcionamento do aplicativo.
 Yellow Box indica um aviso. O aplicativo continua funcionando, mas há algo a ser corrigido.
 
 
-# Q6 – Pergunta de Arquitetura
+### Q6 – Pergunta-Armadilha de Arquitetura
 
 O código apresenta os seguintes problemas:
 
