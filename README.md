@@ -1,17 +1,15 @@
 # StreamIF
 </br>
-
 ## Integrantes
 
 Beatriz Cristina Costa, AQ3022153</br>
-
 Bernardo
-</br></br></br>
+</br>
 
 ## Descrição do Aplicativo
 
-O StreamIF é um aplicativo desenvolvido em React Native para gerenciamento de filmes e séries. O usuário pode cadastrar mídias, visualizar informações, marcar conteúdos como assistidos e consultar detalhes de cada item.
-</br></br></br>
+O StreamIF é um aplicativo desenvolvido em React Native para gerenciamento de filmes e séries. O usuário pode cadastrar mídias, visualizar informações, marcar conteúdos como assistidos e consultar detalhes de cada item.</br></br>
+
 
 ## Funcionalidades Implementadas
 
@@ -23,8 +21,8 @@ Tela de detalhes com ScrollView.
 Campo de anotações pessoais.
 Contador dinâmico de títulos e assistidos.
 Ordenação por ordem alfabética (A-Z) e por nota.
-Validação de formulário com mensagens de erro no Modal.
-</br></br></br>
+Validação de formulário com mensagens de erro no Modal.</br></br>
+
 
 ## Como Executar o Projeto
 
@@ -38,9 +36,7 @@ npm start
 
 3 Executar no Android:
 
-npm run android
-
-</br></br></br>
+npm run android </br></br>
 
 ## Diário de Depuração
 
@@ -48,9 +44,7 @@ Bug 1:
 (A ser preenchido após os testes finais)
 
 Bug 2:
-(A ser preenchido após os testes finais)
-
-</br></br></br>
+(A ser preenchido após os testes finais) </br></br>
 
 ## Justificativa Arquitetural:
 
