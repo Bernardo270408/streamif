@@ -41,7 +41,7 @@ npm run android </br></br>
 ## Diário de Depuração
 
 Bug 1:
-(A ser preenchido após os testes finais)
+<!-- O primeiro problema encontrado, por parte do aluno Bernardo, foi um redbox ao tentar executar a aplicação no próprio celular, dado por incompatibilidade na versão dos pacotes NPM: O sistema utilizado era Arch Linux, conhecido por ter pacotes na última versão (Bleeding Edge). Isso resultou em uma incompatibilidade com o aplicativo do Expo disponível na Play Store, e para contornar o problema foi necessário usar um ambiente local. -->
 
 Bug 2:
 (A ser preenchido após os testes finais) </br></br>

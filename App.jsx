@@ -1,8 +1,10 @@
+// App.jsx
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import CatalogScreen from './screens/CatalogScreen';
 import AddMediaForm from './components/AddMediaForm';
 import DetailScreen from './screens/DetailScreen';
+import { styles } from './styles/style';
 
 export default function App() {
   const [midias, setMidias] = useState([]);
@@ -10,6 +12,7 @@ export default function App() {
 
   const [telaAtual, setTelaAtual] = useState('catalogo');
   const [midiaSelecionada, setMidiaSelecionada] = useState(null);
+  const [tipoOrdenacao, setTipoOrdenacao] = useState('az');
 
   const adicionarMidia = (novaMidia) => {
     setMidias([...midias, novaMidia]);
@@ -92,11 +95,3 @@ if (telaAtual === 'detalhes') {
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

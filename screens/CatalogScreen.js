@@ -1,3 +1,4 @@
+// screens/CatalogScreen.js
 import React from 'react';
 import { View, FlatList, Button, Text, StyleSheet } from 'react-native';
 import MediaCard from '../components/MediaCard';

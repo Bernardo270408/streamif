@@ -1,3 +1,4 @@
+// components/MediaCard.js
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 

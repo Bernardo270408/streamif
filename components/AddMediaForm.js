@@ -1,3 +1,4 @@
+// components/AddMediaForm.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Modal, StyleSheet } from 'react-native';
 

@@ -1,3 +1,4 @@
+// screens/DetailScreen.js
 import React, { useState } from 'react';
 import { ScrollView, Text, TextInput, Button, StyleSheet } from 'react-native';
 
