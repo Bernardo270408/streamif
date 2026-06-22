@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import CatalogScreen from './screens/CatalogScreen';
 import AddMediaForm from './components/AddMediaForm';
 import DetailScreen from './screens/DetailScreen';
@@ -35,15 +35,15 @@ export default function App() {
   };
 
   const abrirDetalhes = (item) => {
-  setMidiaSelecionada(item);
-  setTelaAtual('detalhes');
-};
+    setMidiaSelecionada(item);
+    setTelaAtual('detalhes');
+  };
 
-const voltarCatalogo = () => {
-  setTelaAtual('catalogo');
-};
+  const voltarCatalogo = () => {
+    setTelaAtual('catalogo');
+  };
 
-const alternarOrdenacao = () => {
+  const alternarOrdenacao = () => {
     if (tipoOrdenacao === 'az') {
       setTipoOrdenacao('nota');
     } else {
@@ -63,28 +63,29 @@ const alternarOrdenacao = () => {
     );
   }
 
-
-let screen = (
-<CatalogScreen
-midias={midias}
-aoAlternarAssistido={alternarAssistido}
-aoRemover={removerMidia}
-aoAbrirDetalhes={abrirDetalhes}
-abrirModal={() => setModalVisivel(true)}
-/>
-);
-
-if (telaAtual === 'detalhes') {
-  screen = (
-    <DetailScreen
-      midia={midiaSelecionada}
-      aoVoltar={voltarCatalogo}
+  let screen = (
+    <CatalogScreen
+      midias={midiasOrdenadas}              
+      tipoOrdenacao={tipoOrdenacao}         
+      alternarOrdenacao={alternarOrdenacao}
+      aoAlternarAssistido={alternarAssistido}
+      aoRemover={removerMidia}
+      aoAbrirDetalhes={abrirDetalhes}
+      abrirModal={() => setModalVisivel(true)}
     />
   );
-}
+
+  if (telaAtual === 'detalhes') {
+    screen = (
+      <DetailScreen
+        midia={midiaSelecionada}
+        aoVoltar={voltarCatalogo}
+      />
+    );
+  }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       {screen}
 
       <AddMediaForm 

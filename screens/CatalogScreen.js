@@ -1,34 +1,16 @@
-// screens/CatalogScreen.js
 import React from 'react';
 import { View, FlatList, Button, Text, StyleSheet } from 'react-native';
 import MediaCard from '../components/MediaCard';
 import EmptyState from '../components/EmptyState';
+import { COLORS } from '../styles/theme';
 
-export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, aoAbrirDetalhes, abrirModal,tipoOrdenacao, alternarOrdenacao }) {
+export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, aoAbrirDetalhes, abrirModal, tipoOrdenacao, alternarOrdenacao }) {
   
   const totalTitulos = midias.length;
-
-  const totalAssistidos = midias.filter(
-    (midia) => midia.assistido
-  ).length;
+  const totalAssistidos = midias.filter((m) => m.assistido).length;
   
   return (
     <View style={styles.container}>
-      <Button title="+ Adicionar" onPress={abrirModal} />
-    
-      <Button
-        title={
-          tipoOrdenacao === 'az'
-            ? 'Ordenação: A-Z'
-            : 'Ordenação: Maior Nota'
-        }
-        onPress={alternarOrdenacao}
-      />
-          
-      <Text>
-        {totalTitulos} títulos | {totalAssistidos} assistidos
-      </Text>
-      
       <FlatList
         data={midias}
         keyExtractor={(item) => item.id}
@@ -41,12 +23,53 @@ export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, 
           />
         )}
         ListEmptyComponent={EmptyState}
+        contentContainerStyle={styles.lista}
       />
+
+      <Text style={styles.contador}>
+        {totalTitulos} {totalTitulos === 1 ? 'título' : 'títulos'} cadastrados  •  <Text style={{color: COLORS.green}}>{totalAssistidos} assistidos</Text>
+      </Text>
+      <View style={styles.barraBotoes}>
+        <View style={styles.botaoWrapper}>
+          <Button title="+ Adicionar" color={COLORS.green} onPress={abrirModal} />
+        </View>
+
+        <View style={styles.botaoWrapper}>
+          <Button
+            title={tipoOrdenacao === 'az' ? 'Ordem: A-Z' : 'Ordem: Nota'}
+            color={COLORS.surface0}
+            onPress={alternarOrdenacao}
+          />
+        </View>
+      </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.base,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
+  barraBotoes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+    gap: 10,
+  },
+  botaoWrapper: {
+    flex: 1,
+  },
+  contador: {
+    color: COLORS.subtext,
+    fontSize: 13,
+    textAlign: 'center',
+    marginBottom: 16,
+    fontWeight: '500',
+  },
+  lista: {
+    paddingBottom: 30,
+  }
 });
