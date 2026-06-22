@@ -59,7 +59,7 @@
 - [x] **E1 (+0,5):** Contador de mídias no topo da tela mostrando dinamicamente `"X títulos | Y assistidos"`.
 - [x] **E2 (+0,5):** Ordenação dinâmica com botão que alterna a lista entre ordem alfabética (A-Z) e maior nota primeiro (sem bibliotecas externas).
 - [x] **E3 (+0,5):** Validação robusta no formulário impedindo título vazio, nota fora do escopo 1-10 e exibindo a mensagem de erro **dentro** do próprio Modal (sem alert).
-- [ ] **E4 (+0,5):** Modo escuro manual através de um botão que alterna o tema do app, propagando as cores via props para todos os componentes.
+- [X] **E4 (+0,5):** Modo escuro manual através de um botão que alterna o tema do app, propagando as cores via props para todos os componentes.
 
 ---
 
@@ -68,7 +68,7 @@
 - [x] NÃO utilizar bibliotecas de UI prontas (`NativeBase`, `React Native Paper`, `UI Kitten`, etc.).
 - [x] NÃO usar métodos externos (`lodash`, `underscore`) para manipular arrays.
 - [x] Usar estilos inline apenas para valores puramente dinâmicos (como a cor da nota). Todo o resto deve usar `StyleSheet.create()`.
-- [ ] Garantir que o projeto rode no Expo Go sem nenhum erro de Red Box.
+- [X] Garantir que o projeto rode no Expo Go sem nenhum erro de Red Box.
 
 ---
 

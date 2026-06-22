@@ -1,63 +1,68 @@
-# StreamIF </br>
+# StreamIF
 
 ## Integrantes
 
-Beatriz Cristina Costa, AQ3022153
-Bernardo
+* **Beatriz Cristina Costa** (AQ3022153)
+* **Bernardo Duarte Marcelino** (AQ3020941)
+
+---
 
 ## Descrição do Aplicativo
 
-O StreamIF é um aplicativo desenvolvido em React Native para gerenciamento de filmes e séries. O usuário pode cadastrar mídias, visualizar informações, marcar conteúdos como assistidos e consultar detalhes de cada item.
+O **StreamIF** é um aplicativo mobile desenvolvido em **React Native** para o gerenciamento personalizado de filmes e séries. A plataforma permite ao usuário catalogar suas mídias favoritas, acompanhar o status de visualização, fazer anotações pessoais e organizar sua lista de forma prática.
 
+---
 
 ## Funcionalidades Implementadas
 
-Cadastro de séries e filmes através de Modal.
-Listagem utilizando FlatList.
-Marcação de mídias como assistidas.
-Remoção de mídias utilizando Array.filter().
-Tela de detalhes com ScrollView.
-Campo de anotações pessoais.
-Contador dinâmico de títulos e assistidos.
-Ordenação por ordem alfabética (A-Z) e por nota.
-Validação de formulário com mensagens de erro no Modal.
+* **Cadastro Dinâmico:** Inclusão de novas séries e filmes através de um formulário em *Modal* com validação de campos e mensagens de erro.
+* **Exibição Otimizada:** Listagem de mídias utilizando `FlatList` para maior performance e tela de detalhes detalhada com `ScrollView`.
+* **Gerenciamento de Status:** Opção para marcar conteúdos como assistidos e remoção de mídias utilizando o método `Array.filter()`.
+* **Filtros e Ordenação:** Organização dos títulos por ordem alfabética (A-Z) ou por nota de avaliação.
+* **Controle e Estatísticas:** Contador dinâmico de títulos totais e conteúdos assistidos, além de um campo para anotações pessoais em cada mídia.
 
+---
 
-## Como Executar o Projeto
+## Justificativa Arquitetural
 
-1 Instalar as dependências:
+A aplicação utiliza uma **arquitetura centralizada no estado global** (`App.js`), que atua como o orquestrador principal do sistema (controlando a lista de mídias, visibilidade de modais e navegação).
 
+A comunicação entre os componentes segue o padrão do React:
+
+* **Fluxo Top-Down (Props):** O componente pai envia os dados para os filhos (ex: `CatalogScreen` recebe a lista de mídias; `DetailScreen` recebe o item selecionado).
+* **Fluxo Bottom-Up (Callbacks):** Os componentes filhos disparam eventos de volta para o pai (ex: `AddMediaForm` envia uma nova mídia via função `aoSalvar`; `MediaCard` dispara ações de remoção ou mudança de status).
+
+Essa abordagem garante separação de responsabilidades, código limpo e facilidade de manutenção.
+
+---
+
+## 🛠️ Como Executar o Projeto
+
+Siga os passos abaixo no terminal para rodar a aplicação localmente:
+
+1. **Instalar as dependências:**
+```bash
 npm install
+```
 
-2 Iniciar o projeto:
-
+2. **Iniciar o servidor do Expo/React Native:**
+```bash
 npm start
+```
 
-3 Executar no Android:
-
+3. **Executar no emulador ou dispositivo Android:**
+```bash
 npm run android
+```
 
-## Diário de Depuração
+---
 
-Bug 1:
-O primeiro problema encontrado, por parte do aluno Bernardo, foi um redbox ao tentar executar a aplicação no próprio celular, dado por incompatibilidade na versão dos pacotes NPM: O sistema utilizado era Arch Linux, conhecido por ter pacotes na última versão (Bleeding Edge). Isso resultou em uma incompatibilidade com o aplicativo do Expo disponível na Play Store, e para contornar o problema foi necessário usar um ambiente local.
+## Diário de Depuração (Bug Log)
 
-Bug 2:
-O segundo problema encontrado foi na hora de aplicar a troca de tema. Os stylesheets do react native são estáticos e são gerados apenas na execução, por isso foi necessário criar um hook useStyles, um wrapper ThemeProvider, e modificar toda a forma com que as cores eram recebidas. 
+### Bug 1: Incompatibilidade de Versões no Ambiente Local
+*   **Problema:** O aluno Bernardo enfrentou um erro de *redbox* ao tentar rodar a aplicação no dispositivo físico. O sistema operacional utilizado (Arch Linux) utiliza o modelo *Bleeding Edge* (pacotes na última versão), gerando incompatibilidade com o app do Expo da Play Store.
+*   **Solução:** Foi necessário isolar e configurar um ambiente de desenvolvimento estritamente local para a execução do projeto.
 
-## Justificativa Arquitetural:
-
-O estado principal da aplicação foi centralizado no componente App.js, que atua como orquestrador do sistema. Dessa forma, App.js é o responsável por armazenar e atualizar a lista de mídias, controlar a visibilidade do Modal e gerenciar a navegação entre as telas.
-
-Os componentes filhos recebem dados através de props (fluxo Top-Down) e enviam eventos para o componente pai através de funções passadas por props (fluxo Bottom-Up).
-
-Exemplo:
-
-AddMediaForm envia uma nova mídia para App.js através da função aoSalvar.
-CatalogScreen recebe a lista de mídias através de props.
-MediaCard recebe informações individuais de cada mídia e dispara eventos de remoção ou alteração de status.
-DetailScreen recebe a mídia selecionada para exibição dos detalhes.
-
-Essa organização permite melhor reutilização dos componentes, manutenção simplificada e separação de responsabilidades.
-
-
+### Bug 2: Estilização Dinâmica (Troca de Tema)
+*   **Problema:** Os *Stylesheets* do React Native são estáticos e renderizados apenas uma vez na inicialização, impossibilitando a troca de tema (claro/escuro) em tempo real.
+*   **Solução:** Foi implementada uma estrutura com um wrapper `ThemeProvider` e o hook customizado `useStyles`, adaptando os componentes para receberem as cores dinamicamente baseadas no estado do tema ativo.

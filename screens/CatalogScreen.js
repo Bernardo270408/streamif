@@ -4,7 +4,6 @@ import MediaCard from '../components/MediaCard';
 import EmptyState from '../components/EmptyState';
 import { createStyles } from '../styles/CatalogScreen'; 
 import { useStyles } from '../hooks/useStyles';
-// 1. Importar o hook do seu ThemeContext
 import { useTheme } from '../styles/ThemeContext';
 
 export default function CatalogScreen({ 
@@ -17,7 +16,6 @@ export default function CatalogScreen({
   alternarOrdenacao 
 }) {
   const styles = useStyles(createStyles); 
-  // 2. Extrair a função de alternar o tema
   const { toggleTheme } = useTheme();
 
   const totalTitulos = midias.length;
@@ -68,7 +66,6 @@ export default function CatalogScreen({
           </TouchableOpacity>
         </View>
 
-        {/* 3. Novo botão para alternar o tema */}
         <View style={styles.botaoWrapper}>
           <TouchableOpacity 
             style={styles.botaoSecundario} 

@@ -9,20 +9,13 @@ export function ThemeProvider({ children }) {
 
   const toggleTheme = () => {
     setTheme(current =>
-      current === DARK_THEME
-        ? LIGHT_THEME
-        : DARK_THEME
+      current === DARK_THEME ? LIGHT_THEME : DARK_THEME
     );
   };
 
   return (
     <ThemeContext.Provider
-      value={{
-        theme,
-        toggleTheme
-      }}
-    >
-      {children}
+      value={{ theme, toggleTheme }}> {children}
     </ThemeContext.Provider>
   );
 }
