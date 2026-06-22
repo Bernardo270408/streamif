@@ -3,6 +3,7 @@ import { View, FlatList, Button, Text, StyleSheet } from 'react-native';
 import MediaCard from '../components/MediaCard';
 import EmptyState from '../components/EmptyState';
 import { COLORS } from '../styles/theme';
+import { styles } from '../styles/CatalogScreen';
 
 export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, aoAbrirDetalhes, abrirModal, tipoOrdenacao, alternarOrdenacao }) {
   
@@ -46,30 +47,3 @@ export default function CatalogScreen({ midias, aoAlternarAssistido, aoRemover, 
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.base,
-    paddingHorizontal: 16,
-    paddingTop: 16,
-  },
-  barraBotoes: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 12,
-    gap: 10,
-  },
-  botaoWrapper: {
-    flex: 1,
-  },
-  contador: {
-    color: COLORS.subtext,
-    fontSize: 13,
-    textAlign: 'center',
-    marginBottom: 16,
-    fontWeight: '500',
-  },
-  lista: {
-    paddingBottom: 30,
-  }
-});

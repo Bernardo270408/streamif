@@ -29,4 +29,4 @@ export const DARK_THEME = {
 }
 
 
-export const COLORS = DARK_THEME; // Mantenha DARK_THEME como padrão, mas pode ser alternado para LIGHT_THEME se desejar
+export const COLORS = DARK_THEME; 
