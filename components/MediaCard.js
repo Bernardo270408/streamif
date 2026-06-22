@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
-import { COLORS } from '../styles/theme';
-import { styles } from '../styles/MediaCard';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { createStyles } from '../styles/MediaCard'; 
+import { useStyles } from '../hooks/useStyles';
 
 export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbrirDetalhes }) {
-  
-  let corDaNota = COLORS.green;
-  if (item.nota >= 7) corDaNota = COLORS.green;
-  else if (item.nota >= 4 && item.nota <= 6) corDaNota = COLORS.yellow;
-  else corDaNota = COLORS.red;
+  const styles = useStyles(createStyles);
+
+  const obterEstiloNota = (nota) => {
+    if (nota >= 7) return styles.notaVerde;
+    if (nota >= 4) return styles.notaAmarela; 
+    return styles.notaVermelha;
+  };
 
   return (
     <TouchableOpacity 
@@ -19,7 +21,7 @@ export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbri
       <View style={styles.card}>
         <View style={styles.cabecalho}>
           <Text style={styles.titulo} numberOfLines={1}>{item.titulo}</Text>
-          <Text style={[styles.nota, { color: corDaNota }]}>★ {item.nota}</Text>
+          <Text style={[styles.nota, obterEstiloNota(item.nota)]}>★ {item.nota}</Text>
         </View>
 
         <Text style={styles.genero}>{item.genero}</Text>
@@ -31,7 +33,9 @@ export default function MediaCard({ item, aoAlternarAssistido, aoRemover, aoAbri
             </Text>
           </Text>
           
-          <Button title="Excluir" color={COLORS.red} onPress={() => aoRemover(item.id)} />
+          <TouchableOpacity accessibilityRole="button" onPress={() => aoRemover(item.id)}>
+            <Text style={styles.botaoExcluirTexto}>Excluir</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </TouchableOpacity>

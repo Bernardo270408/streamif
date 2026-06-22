@@ -1,41 +1,42 @@
-// /styles/AddMediaForm.js
-import { COLORS } from '../styles/theme';
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const createStyles = (theme) => StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(17, 17, 27, 0.85)', // crust com 85% de opacidade
+    backgroundColor: 'rgba(17, 17, 27, 0.85)', 
     justifyContent: 'flex-end',
   },
   modalBody: {
-    backgroundColor: COLORS.mantle,
+    backgroundColor: theme.mantle,
     padding: 24,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderTopWidth: 1,
-    borderTopColor: COLORS.surface0,
+    borderTopColor: theme.surface0,
   },
   titulo: {
-    color: COLORS.text,
+    color: theme.text,
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 16,
     textAlign: 'center',
   },
   input: {
-    backgroundColor: COLORS.crust,
-    color: COLORS.text,
+    backgroundColor: theme.crust,
+    color: theme.text,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: COLORS.surface0,
+    borderColor: theme.surface0,
     paddingHorizontal: 14,
     paddingVertical: 12,
     marginBottom: 12,
     fontSize: 15,
   },
+  placeholder: {
+    color: theme.subtext, // Usado como ponte para a prop placeholderTextColor
+  },
   erro: {
-    color: COLORS.red,
+    color: theme.red,
     textAlign: 'center',
     marginBottom: 12,
     fontWeight: '500',
@@ -44,5 +45,24 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 8,
     marginBottom: 10,
-  }
+  },
+  botao: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  botaoCancelar: {
+    backgroundColor: theme.red,
+    marginRight: 12,
+  },
+  botaoSalvar: {
+    backgroundColor: theme.green,
+  },
+  textoBotao: {
+    color: theme.mantle,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

@@ -1,22 +1,20 @@
-// styles/DetailScreen.js
 import { StyleSheet } from 'react-native';
-import { COLORS } from './theme';
 
-export const styles = StyleSheet.create({
+export const createStyles = (theme) => StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: COLORS.base,
+    backgroundColor: theme.base,
     padding: 24,
   },
   genero: {
-    color: COLORS.mauve,
+    color: theme.mauve,
     fontSize: 14,
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 1,
   },
   titulo: {
-    color: COLORS.text,
+    color: theme.text,
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 16,
@@ -27,32 +25,36 @@ export const styles = StyleSheet.create({
     marginBottom: 24,
   },
   badge: {
-    backgroundColor: COLORS.surface0,
+    backgroundColor: theme.surface0,
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 6,
   },
   badgeAssistido: {
-    backgroundColor: COLORS.green,
+    backgroundColor: theme.green,
   },
   badgePendente: {
-    backgroundColor: COLORS.yellow,
+    backgroundColor: theme.yellow,
   },
   badgeTexto: {
-    color: COLORS.text,
+    color: theme.text,
     fontWeight: 'bold',
     fontSize: 13,
   },
+  badgeTextoAssistido: {
+    color: theme.mantle,
+  },
   label: {
-    color: COLORS.subtext,
+    color: theme.subtext,
     fontSize: 14,
     marginBottom: 8,
   },
   input: {
-    backgroundColor: COLORS.mantle,
-    color: COLORS.text,
+    backgroundColor: theme.mantle,
+    color: theme.text,
     borderWidth: 1,
-    borderColor: COLORS.surface0,
+    borderColor: theme.surface0,
+    placeholderTextColor: theme.subtext,
     borderRadius: 12,
     minHeight: 180,
     padding: 16,
@@ -62,5 +64,18 @@ export const styles = StyleSheet.create({
   footerBtn: {
     marginTop: 'auto',
     paddingTop: 20,
+  },
+  botaoVoltar: {
+    backgroundColor: theme.blue,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  botaoVoltarTexto: {
+    color: theme.base, 
+    fontSize: 16,
+    fontWeight: '600',
   }
 });

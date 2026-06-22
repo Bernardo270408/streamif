@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, TextInput, Button, View, StyleSheet } from 'react-native';
-import { COLORS } from '../styles/theme';
-import { styles } from '../styles/DetailScreen';
+import { ScrollView, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { createStyles } from '../styles/DetailScreen';
+import { useStyles } from '../hooks/useStyles';
 
 export default function DetailScreen({ midia, aoVoltar }) {
+  const styles = useStyles(createStyles);
   const [anotacoes, setAnotacoes] = useState('');
 
   return (
@@ -15,8 +16,9 @@ export default function DetailScreen({ midia, aoVoltar }) {
         <View style={styles.badge}>
           <Text style={styles.badgeTexto}>Nota: {midia.nota}/10</Text>
         </View>
+        
         <View style={[styles.badge, midia.assistido ? styles.badgeAssistido : styles.badgePendente]}>
-          <Text style={[styles.badgeTexto, midia.assistido && {color: COLORS.mantle}]}>
+          <Text style={[styles.badgeTexto, midia.assistido && styles.badgeTextoAssistido]}>
             {midia.assistido ? '✓ Assistido' : 'Pendente'}
           </Text>
         </View>
@@ -26,16 +28,20 @@ export default function DetailScreen({ midia, aoVoltar }) {
       <TextInput
         style={styles.input}
         placeholder="Escreva detalhes sobre onde parou, o que achou..."
-        placeholderTextColor={COLORS.subtext}
         value={anotacoes}
         onChangeText={setAnotacoes}
         multiline
       />
 
       <View style={styles.footerBtn}>
-        <Button title="← Voltar ao Catálogo" color={COLORS.blue} onPress={aoVoltar} />
+        <TouchableOpacity 
+          style={styles.botaoVoltar} 
+          onPress={aoVoltar}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.botaoVoltarTexto}>← Voltar ao Catálogo</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
 }
-

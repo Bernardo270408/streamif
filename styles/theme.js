@@ -28,5 +28,4 @@ export const DARK_THEME = {
   blue: '#89b4fa',      // Placeholder/Links
 }
 
-
-export const COLORS = DARK_THEME; 
+export const COLORS = DARK_THEME; // deprecated

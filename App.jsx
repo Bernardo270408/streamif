@@ -4,9 +4,12 @@ import { SafeAreaView } from 'react-native';
 import CatalogScreen from './screens/CatalogScreen';
 import AddMediaForm from './components/AddMediaForm';
 import DetailScreen from './screens/DetailScreen';
-import { styles } from './styles/style';
+import { useStyles } from './hooks/useStyles';
+import { ThemeProvider } from './styles/ThemeContext';
+import { createStyles } from './styles/style';
 
-export default function App() {
+function AppContent() {
+  const styles = useStyles(createStyles);
   const [midias, setMidias] = useState([]);
   const [modalVisivel, setModalVisivel] = useState(false);
 
@@ -94,5 +97,13 @@ export default function App() {
         aoCancelar={() => setModalVisivel(false)}
       />
     </SafeAreaView>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
