@@ -91,6 +91,6 @@
 - [x] **Q6 (Pergunta-Armadilha):** Listagem detalhada de pelo menos 7 problemas arquiteturais no código de exemplo fornecido e a apresentação da versão corrigida dele.
 
 ### Compactação e Envio
-- [ ] Deletar a pasta `node_modules`.
-- [ ] Compactar o projeto em `.zip` seguindo o padrão: `NomeAluno1_NomeAluno2_StreamIF.zip`.
-- [ ] Realizar o envio exclusivamente pelo AVA dentro do prazo.
+- [x] Deletar a pasta `node_modules`.
+- [x] Compactar o projeto em `.zip` seguindo o padrão: `NomeAluno1_NomeAluno2_StreamIF.zip`.
+- [x] Realizar o envio exclusivamente pelo AVA dentro do prazo.
